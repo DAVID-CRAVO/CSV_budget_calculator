@@ -47,7 +47,7 @@ def show_summary(data):
 
     summary = summarize_by_category(data)
     total = sum(summary.values())
-    average = total /len(data)
+    average = total /(len(data)-1)
 
     print("\nSummary by transaction:")
     for category, amount in summary.items():
@@ -58,22 +58,3 @@ def show_summary(data):
     save_summary(summary, total, average)
 
 # Main function
-def main():
-    filename = "budgets.csv"
-    data = load_data(filename)
-
-    if not data:
-        return
-
-    while True:
-        choice = input("\nOptions:\n1. View Summary\n2. Exit\nChoose: ")
-        if choice == '1':
-            show_summary(data)
-        elif choice == '2':
-            print("Goodbye!")
-            break
-        else:
-            print("Invalid option.")
-
-if __name__ == "__main__":
-    main()
