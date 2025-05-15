@@ -1,4 +1,4 @@
 echo off
 REM Run the Expenses tracker  
-python Expenses_tracker.py budgets.csv
+python Main_function.py budgets.csv
 pause
